@@ -1,0 +1,1151 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the raymarine_autopilot_pi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: raymarine_autopilot_pi 1.0.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-10 11:23+0100\n"
+"PO-Revision-Date: 2023-12-02 11:10+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+#
+msgid "  Downloadsource (URL) : "
+msgstr ""
+#
+msgid "  example : http(s)://Server.com?[x]?[y]?[z]"
+msgstr ""
+#
+msgid "(20)"
+msgstr ""
+#
+msgid "(21)"
+msgstr ""
+#
+msgid "---"
+msgstr ""
+#
+msgid "------"
+msgstr ""
+#
+msgid "10"
+msgstr ""
+#
+msgid "11"
+msgstr ""
+#
+msgid "12"
+msgstr ""
+#
+msgid "13"
+msgstr ""
+#
+msgid "14"
+msgstr ""
+#
+msgid "15"
+msgstr ""
+#
+msgid "16"
+msgstr ""
+#
+msgid "17"
+msgstr ""
+#
+msgid "18"
+msgstr ""
+#
+msgid "19"
+msgstr ""
+#
+msgid "2000"
+msgstr ""
+#
+msgid "9"
+msgstr ""
+#
+msgid "Abort"
+msgstr ""
+#
+msgid "Cancel"
+msgstr ""
+#
+msgid "Chart"
+msgstr ""
+#
+msgid "Chart directory not exist"
+msgstr ""
+#
+msgid "ChartFile"
+msgstr ""
+#
+msgid "Chartfile rename"
+msgstr ""
+#
+msgid "Close Window"
+msgstr ""
+#
+msgid "Create Kap File"
+msgstr ""
+#
+msgid "Delete Chart"
+msgstr ""
+#
+msgid "Download Canceled"
+msgstr ""
+#
+msgid "Download Error"
+msgstr ""
+#
+msgid "Download ready"
+msgstr ""
+#
+msgid "Downloading tiles..."
+msgstr ""
+#
+msgid "Enter Chart Filename (without .kap ending)"
+msgstr ""
+#
+msgid "Enter Filename"
+msgstr ""
+#
+msgid "Error Tile Merge"
+msgstr ""
+#
+msgid "Error creating Kap File"
+msgstr ""
+#
+msgid "Error in User URL"
+msgstr ""
+#
+msgid "Failed"
+msgstr ""
+#
+msgid "Generate Chart"
+msgstr ""
+#
+msgid "Google Sattalite (khms1)"
+msgstr ""
+#
+msgid "Google Sattalite (khms1) v=969"
+msgstr ""
+#
+msgid "Google Sattalite (khms2) v=969"
+msgstr ""
+#
+msgid "Google Sattalite (khms3) v=969"
+msgstr ""
+#
+msgid "Kap File deleted"
+msgstr ""
+#
+msgid "Kap File ready"
+msgstr ""
+#
+msgid "Log Tilemerger output to OpenCPN Logfile"
+msgstr ""
+#
+msgid "Make kap charts from tile (Google Sat, ...)"
+msgstr ""
+#
+msgid ""
+"Make kap charts from tile png by selecting the area on the OpenCPN canvas. "
+"Use Google-Satallite, OpenStreetview ... or self defined http(s) link. "
+"(Internet connection is required)"
+msgstr ""
+#
+msgid "Merge Tile"
+msgstr ""
+#
+msgid "OpenStreetmap"
+msgstr ""
+#
+msgid "Output Chartdirectory (.kap) :"
+msgstr ""
+#
+#
+#
+#
+#
+#
+#, fuzzy
+msgid "Preferences TileChart"
+msgstr "Stuurautomaat voorkeuren"
+#
+#
+#
+#
+#
+#
+#, fuzzy
+msgid "Preferences..."
+msgstr "Stuurautomaat voorkeuren"
+#
+msgid "Rename Chartfile (.kap) after download"
+msgstr ""
+#
+msgid "Select a folder"
+msgstr ""
+#
+msgid "Show chartselection area"
+msgstr ""
+#
+msgid "Show real Tilechartarea"
+msgstr ""
+#
+msgid "Start"
+msgstr ""
+#
+msgid "Tile Files deleted"
+msgstr ""
+#
+msgid "Tile Merge ready"
+msgstr ""
+#
+msgid "Tile count :"
+msgstr ""
+#
+msgid "Tile directory not exist"
+msgstr ""
+#
+msgid "TileChart"
+msgstr ""
+#
+msgid "TileMerger Error Output:"
+msgstr ""
+#
+msgid "TileMerger Output:"
+msgstr ""
+#
+msgid "User defined"
+msgstr ""
+#
+msgid "Zoomlevel :"
+msgstr ""
+#
+msgid "chart area is defined"
+msgstr ""
+#
+msgid "define chart startpoint"
+msgstr ""
+#
+msgid "define chartendpoint"
+msgstr ""
+#
+msgid "delete tile after download"
+msgstr ""
+#
+msgid "deleting Tile Files"
+msgstr ""
+#
+msgid "https://khms3.google.com/kh/v=[v]?x=[x]&y=[y]&z=[z]"
+msgstr ""
+#
+msgid "max tile download "
+msgstr ""
+#
+msgid "tmp tile dir :"
+msgstr ""
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "Allow use AUTO-COG function"
+#~ msgstr "Sta het gebruik van de AUTO-COG-functie toe"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "Autopilot Control"
+#~ msgstr "Stuurautomaat controle"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "Autopilot Control display zoom factor          "
+#~ msgstr "Stuurautomaatbediening geeft zoomfactor weer      "
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#, fuzzy
+#~ msgid ""
+#~ "Autopilot Control for Raymarine Smartpilot and Raymarine EVO\r\n"
+#~ "Simulates a Remote Control (Commandos from ST600x), by sending Seatalk(1) "
+#~ "or SeatalkNG\r\n"
+#~ "Data. Requires Seatalk <-> NMEA Converter. The Sentences must be in the "
+#~ "format\r\n"
+#~ "$SENTENCENAME,Seatalkbytes in Hex. ( $STALK,84,36,9D,88,40,00,"
+#~ "FF,02,06*02 )\r\n"
+#~ "send to the NMEA Output Port. $SENTENCENAME named in the Preferences.\r\n"
+#~ "Or Send N2k Data to Raymarine EVO over NMEA2000 Connector mounted to "
+#~ "OpenCPN."
+#~ msgstr ""
+#~ "Stuurautomaatbediening voor Raymarine Smartpilot\n"
+#~ "Simuleert een afstandsbediening (commando's van ST600x), door Seatalk(1)-"
+#~ "gegevens te verzenden.\n"
+#~ "Vereist Seatalk <-> NMEA-converter. De zinnen moeten het formaat hebben\n"
+#~ "$SENTENCENAME,Seatalkbytes in Hex. ($STALK,84,36,9D,88,40,00,"
+#~ "FF,02,06*02 )\n"
+#~ "verzenden naar de NMEA-uitvoerpoort. $SENTENCENAME genoemd in de "
+#~ "Voorkeuren."
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "Autopilot Parameters changeable"
+#~ msgstr "Stuurautomaatparameters kunnen worden gewijzigd"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "Autopilot Preferences"
+#~ msgstr "Stuurautomaat voorkeuren"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "Autopilot Type  :"
+#~ msgstr "Type automatische piloot :"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid ""
+#~ "Change course value back to the last Compass course value, the Course "
+#~ "Computer\n"
+#~ "had, before the Auto Signal lost"
+#~ msgstr ""
+#~ "Wijzig de koerswaarde terug naar de laatste kompaskoerswaarde, de "
+#~ "koerscomputer\n"
+#~ "had, voordat het automatische signaal verloren ging"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid ""
+#~ "Counter for Autopilot is in Standby Mode, but without \"Standby\" Command "
+#~ "received"
+#~ msgstr ""
+#~ "Teller voor stuurautomaat staat in standby-modus, maar geen \"Standby\"-"
+#~ "commando ontvangen"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "Debug all \"$STALK\" Messages into OPENCPN Logfile"
+#~ msgstr "Debug alle \"$STALK\"-berichten in het OPENCPN-logbestand"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid ""
+#~ "For use EVO Pilot, define NMEA2000/SeatalkNG connection and restart OpenCPN"
+#~ msgstr ""
+#~ "Voor gebruik EVO Pilot, definieer NMEA2000/SeatalkNG verbinding en start "
+#~ "OpenCPN opnieuw"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid ""
+#~ "Modify RMC Sentence as \"$ECRMC\" and replace or fill with Variationfield "
+#~ "with the value from WMM Plugin"
+#~ msgstr ""
+#~ "Wijzig RMC-zin als \"$ECRMC\" en vervang of vul Variationfield met de "
+#~ "waarde van de WMM-plug-in"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "NMEA Sentencename from  Seatalk bus converted by SeatalkLink"
+#~ msgstr ""
+#~ "NMEA Sentencename van Seatalk bus geconverteerd door Seatalktranslator"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "NMEA Sentencename to Seatalk bus converted by SeatalkLink"
+#~ msgstr ""
+#~ "NMEA Sentencename naar Seatalk bus geconverteerd door Seatalktranslator"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "No Parameter selected"
+#~ msgstr "Geen parameter geselecteerd"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "No Value selected"
+#~ msgstr "Geen waarde geselecteerd"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#, fuzzy
+#~ msgid "Raymarine Autopilot"
+#~ msgstr "Raymarine Autopilot"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "Raymarine Autopilot Control for Raymarine Smartpilot and EVO Pilots"
+#~ msgstr "Stuurautomaatbediening voor Raymarine Smartpilot en EVO Pilots"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#, fuzzy
+#~ msgid "Raymarine COG Autopilot"
+#~ msgstr "Raymarine Autopilot"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "Raymarine EVO Autopilot (connected over N2K / SeatalkNG)"
+#~ msgstr "Raymarine EVO stuurautomaat (aangesloten via N2K / SeatalkNG)"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid ""
+#~ "Raymarine Seatalk1 Autopilots (S1,S2,S3, ...), connected over NMEA0183/"
+#~ "Seatalk1 translater"
+#~ msgstr ""
+#~ "Raymarine Seatalk1 stuurautomaten (S1,S2,S3, ...), aangesloten via "
+#~ "NMEA0183/Seatalk1 translater"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid ""
+#~ "Send \"Track\" automatic when Autopilot has new Waypoint. Be careful with "
+#~ "this normaly you have to accept yourself."
+#~ msgstr ""
+#~ "Send \"Track\" automatic when Autopilot has new Waypoint. Be careful with "
+#~ "this normaly you have to accept yourself."
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid ""
+#~ "Send PGN 126720 (keystroke) instead of PGN 126208 (set heading) in AutoMode"
+#~ msgstr ""
+#~ "Verzend PGN 126720 (toetsaanslag) in plaats van PGN 126208 (kop instellen) "
+#~ "in AutoMode"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid ""
+#~ "Send new \"Auto\" Command, when No Standby-Information is received from "
+#~ "other Instrument or from here"
+#~ msgstr ""
+#~ "Stuur een nieuw \"Auto\"-commando wanneer er geen stand-by-informatie "
+#~ "wordt ontvangen van een ander instrument of van hier"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid ""
+#~ "Send new \"Auto\" or \"Auto - Wind\" Command, when \"Standby\" is not send "
+#~ "from here, but the \"Auto\" was from here"
+#~ msgstr ""
+#~ "Stuur een nieuw \"Auto\"- of \"Auto-Wind\"-commando, wanneer \"Standby\" "
+#~ "niet van hier wordt verzonden, maar de \"Auto\" van hier kwam"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid ""
+#~ "Send new \"Auto\" or \"Auto-Wind\" Command, when \"Standby\" is not send "
+#~ "from here, but the \"Auto\" was from here"
+#~ msgstr ""
+#~ "Stuur een nieuw \"Auto\"- of \"Auto-Wind\"-commando, wanneer \"Standby\" "
+#~ "niet van hier wordt verzonden, maar de \"Auto\" van hier kwam"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "Send new \"Auto-Wind\" Command when \"Wind Shift\""
+#~ msgstr "Stuur een nieuw \"Auto-Wind\" -commando wanneer \"Wind Shift\""
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid ""
+#~ "Send variation PGN 127258 to N2K/SeatalkNG with the value from WMM Plugin"
+#~ msgstr ""
+#~ "Stuur variatie PGN 127258 naar N2K/SeatalkNG met de waarde van WMM Plugin"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid ""
+#~ "Send variation PNG 127258 to N2K/SeatalkNG with the value from WMM Plugin"
+#~ msgstr ""
+#~ "Stuur variatie PGN 127258 naar N2K/SeatalkNG met de waarde van WMM Plugin"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid ""
+#~ "Send variation PNG 277258 to N2K/SeatalkNG with the value from WMM Plugin"
+#~ msgstr ""
+#~ "Stuur variatie PGN 277258 naar N2K/SeatalkNG met de waarde van WMM Plugin"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "Sensibility "
+#~ msgstr "Gevoeligheid "
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "Set"
+#~ msgstr "Set"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "Time in seconds to wait before sending \"Track\" sentence."
+#~ msgstr "Wachttijd in seconden voordat de \"Track\"-zin wordt verzonden."
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid ""
+#~ "Value, for maximum  \"Not recived Standby Commands\" not sending \"Auto\" "
+#~ "Command again"
+#~ msgstr ""
+#~ "Waarde, voor maximaal \"Niet ontvangen standby-commando's\" niet opnieuw "
+#~ "verzenden van \"Auto\"-commando"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "Write Message Info to OPENCPN Logfile"
+#~ msgstr "Schrijf berichtinfo naar OPENCPN-logbestand"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "fast"
+#~ msgstr "snel"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "is set to  "
+#~ msgstr "ingesteld op  "
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid ""
+#~ "maximum change of the \"is set pilot heading\" from last set in degrees"
+#~ msgstr ""
+#~ "maximale verandering van de \"is ingestelde pilot koers\" ten opzichte van "
+#~ "de laatst ingestelde in graden"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "maximum difference between COG and magnetic heading in degrees"
+#~ msgstr "maximaal verschil tussen COG en magnetische koers in graden"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "minimun speed in nodes (SOG) for using AUTO-COG function"
+#~ msgstr ""
+#~ "minimale snelheid in knooppunten (SOG) voor gebruik van de AUTO-COG-functie"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid "slow"
+#~ msgstr "langzaam"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#~ msgid ""
+#~ "the autopilot controller will get new +1 or -1 keystroke information to "
+#~ "hold the Course Over Ground."
+#~ msgstr ""
+#~ "de stuurautomaatcontroller krijgt nieuwe +1 of -1 toetsaanslaginformatie "
+#~ "om de koers over de grond vast te houden."

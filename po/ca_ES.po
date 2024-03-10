@@ -1,0 +1,244 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: opencpn\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-10 11:23+0100\n"
+"PO-Revision-Date: 2023-11-09 21:22\n"
+"Last-Translator: \n"
+"Language-Team: Catalan\n"
+"Language: ca_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: opencpn\n"
+"X-Crowdin-Project-ID: 49843\n"
+"X-Crowdin-Language: ca\n"
+"X-Crowdin-File: /plugins/raymarine_autopilot_pi/po/raymarine_autopilot_pi."
+"pot\n"
+"X-Crowdin-File-ID: 454\n"
+#
+msgid "  Downloadsource (URL) : "
+msgstr ""
+#
+msgid "  example : http(s)://Server.com?[x]?[y]?[z]"
+msgstr ""
+#
+msgid "(20)"
+msgstr ""
+#
+msgid "(21)"
+msgstr ""
+#
+msgid "---"
+msgstr ""
+#
+msgid "------"
+msgstr ""
+#
+msgid "10"
+msgstr ""
+#
+msgid "11"
+msgstr ""
+#
+msgid "12"
+msgstr ""
+#
+msgid "13"
+msgstr ""
+#
+msgid "14"
+msgstr ""
+#
+msgid "15"
+msgstr ""
+#
+msgid "16"
+msgstr ""
+#
+msgid "17"
+msgstr ""
+#
+msgid "18"
+msgstr ""
+#
+msgid "19"
+msgstr ""
+#
+msgid "2000"
+msgstr ""
+#
+msgid "9"
+msgstr ""
+#
+msgid "Abort"
+msgstr ""
+#
+msgid "Cancel"
+msgstr ""
+#
+msgid "Chart"
+msgstr ""
+#
+msgid "Chart directory not exist"
+msgstr ""
+#
+msgid "ChartFile"
+msgstr ""
+#
+msgid "Chartfile rename"
+msgstr ""
+#
+msgid "Close Window"
+msgstr ""
+#
+msgid "Create Kap File"
+msgstr ""
+#
+msgid "Delete Chart"
+msgstr ""
+#
+msgid "Download Canceled"
+msgstr ""
+#
+msgid "Download Error"
+msgstr ""
+#
+msgid "Download ready"
+msgstr ""
+#
+msgid "Downloading tiles..."
+msgstr ""
+#
+msgid "Enter Chart Filename (without .kap ending)"
+msgstr ""
+#
+msgid "Enter Filename"
+msgstr ""
+#
+msgid "Error Tile Merge"
+msgstr ""
+#
+msgid "Error creating Kap File"
+msgstr ""
+#
+msgid "Error in User URL"
+msgstr ""
+#
+msgid "Failed"
+msgstr ""
+#
+msgid "Generate Chart"
+msgstr ""
+#
+msgid "Google Sattalite (khms1)"
+msgstr ""
+#
+msgid "Google Sattalite (khms1) v=969"
+msgstr ""
+#
+msgid "Google Sattalite (khms2) v=969"
+msgstr ""
+#
+msgid "Google Sattalite (khms3) v=969"
+msgstr ""
+#
+msgid "Kap File deleted"
+msgstr ""
+#
+msgid "Kap File ready"
+msgstr ""
+#
+msgid "Log Tilemerger output to OpenCPN Logfile"
+msgstr ""
+#
+msgid "Make kap charts from tile (Google Sat, ...)"
+msgstr ""
+#
+msgid ""
+"Make kap charts from tile png by selecting the area on the OpenCPN canvas. "
+"Use Google-Satallite, OpenStreetview ... or self defined http(s) link. "
+"(Internet connection is required)"
+msgstr ""
+#
+msgid "Merge Tile"
+msgstr ""
+#
+msgid "OpenStreetmap"
+msgstr ""
+#
+msgid "Output Chartdirectory (.kap) :"
+msgstr ""
+#
+msgid "Preferences TileChart"
+msgstr ""
+#
+msgid "Preferences..."
+msgstr ""
+#
+msgid "Rename Chartfile (.kap) after download"
+msgstr ""
+#
+msgid "Select a folder"
+msgstr ""
+#
+msgid "Show chartselection area"
+msgstr ""
+#
+msgid "Show real Tilechartarea"
+msgstr ""
+#
+msgid "Start"
+msgstr ""
+#
+msgid "Tile Files deleted"
+msgstr ""
+#
+msgid "Tile Merge ready"
+msgstr ""
+#
+msgid "Tile count :"
+msgstr ""
+#
+msgid "Tile directory not exist"
+msgstr ""
+#
+msgid "TileChart"
+msgstr ""
+#
+msgid "TileMerger Error Output:"
+msgstr ""
+#
+msgid "TileMerger Output:"
+msgstr ""
+#
+msgid "User defined"
+msgstr ""
+#
+msgid "Zoomlevel :"
+msgstr ""
+#
+msgid "chart area is defined"
+msgstr ""
+#
+msgid "define chart startpoint"
+msgstr ""
+#
+msgid "define chartendpoint"
+msgstr ""
+#
+msgid "delete tile after download"
+msgstr ""
+#
+msgid "deleting Tile Files"
+msgstr ""
+#
+msgid "https://khms3.google.com/kh/v=[v]?x=[x]&y=[y]&z=[z]"
+msgstr ""
+#
+msgid "max tile download "
+msgstr ""
+#
+msgid "tmp tile dir :"
+msgstr ""

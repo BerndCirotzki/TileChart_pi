@@ -1,0 +1,318 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the TileChart_pi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TileChart_pi 1.0.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-10 11:23+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: include/TileChartgui.h:65 include/TileChartgui_impl.h:56
+#: src/TileChart_pi.cpp:131 src/TileChart_pi.cpp:304 src/TileChart_pi.cpp:342
+msgid "TileChart"
+msgstr ""
+
+#: include/TileChartgui.h:109
+msgid "Preferences TileChart"
+msgstr ""
+
+#: include/TileChartgui.h:131
+msgid "ChartFile"
+msgstr ""
+
+#: src/TileChart_pi.cpp:241
+msgid "Make kap charts from tile (Google Sat, ...)"
+msgstr ""
+
+#: src/TileChart_pi.cpp:247
+msgid ""
+"Make kap charts from tile png by selecting the area on the OpenCPN canvas. "
+"Use Google-Satallite, OpenStreetview ... or self defined http(s) link. "
+"(Internet connection is required)"
+msgstr ""
+
+#: src/TileChart_pi.cpp:562
+msgid "define chartendpoint"
+msgstr ""
+
+#: src/TileChart_pi.cpp:583
+msgid "chart area is defined"
+msgstr ""
+
+#: src/TileChart_pi.cpp:692
+msgid "Tile directory not exist"
+msgstr ""
+
+#: src/TileChart_pi.cpp:698
+msgid "Chart directory not exist"
+msgstr ""
+
+#: src/TileChart_pi.cpp:736
+msgid "Error in User URL"
+msgstr ""
+
+#: src/TileChart_pi.cpp:816
+msgid "Downloading tiles..."
+msgstr ""
+
+#: src/TileChart_pi.cpp:876 src/TileChart_pi.cpp:965
+msgid "Download Canceled"
+msgstr ""
+
+#: src/TileChart_pi.cpp:884
+msgid "Download Error"
+msgstr ""
+
+#: src/TileChart_pi.cpp:891
+msgid "Download ready"
+msgstr ""
+
+#: src/TileChart_pi.cpp:904
+msgid "Abort"
+msgstr ""
+
+#: src/TileChart_pi.cpp:911
+msgid "Failed"
+msgstr ""
+
+#: src/TileChart_pi.cpp:976
+msgid "Merge Tile"
+msgstr ""
+
+#: src/TileChart_pi.cpp:987
+msgid "Tile Merge ready"
+msgstr ""
+
+#: src/TileChart_pi.cpp:994
+msgid "Error Tile Merge"
+msgstr ""
+
+#: src/TileChart_pi.cpp:1003
+msgid "TileMerger Output:"
+msgstr ""
+
+#: src/TileChart_pi.cpp:1011
+msgid "TileMerger Error Output:"
+msgstr ""
+
+#: src/TileChart_pi.cpp:1025
+msgid "deleting Tile Files"
+msgstr ""
+
+#: src/TileChart_pi.cpp:1035
+msgid "Tile Files deleted"
+msgstr ""
+
+#: src/TileChart_pi.cpp:1042
+msgid "Create Kap File"
+msgstr ""
+
+#: src/TileChart_pi.cpp:1062
+msgid "Kap File ready"
+msgstr ""
+
+#: src/TileChart_pi.cpp:1077
+msgid "Error creating Kap File"
+msgstr ""
+
+#: src/TileChart_pi.cpp:1110
+msgid "Kap File deleted"
+msgstr ""
+
+#: src/TileChart_pi.cpp:1118
+msgid "Chartfile rename"
+msgstr ""
+
+#: src/TileChart_pi.cpp:1127
+msgid "Enter Filename"
+msgstr ""
+
+#: src/TileChartgui.cpp:24
+msgid "Start"
+msgstr ""
+
+#: src/TileChartgui.cpp:27 src/TileChartgui.cpp:59
+msgid "---"
+msgstr ""
+
+#: src/TileChartgui.cpp:42
+msgid "Zoomlevel :"
+msgstr ""
+
+#: src/TileChartgui.cpp:46
+msgid "(20)"
+msgstr ""
+
+#: src/TileChartgui.cpp:46
+msgid "(21)"
+msgstr ""
+
+#: src/TileChartgui.cpp:46
+msgid "10"
+msgstr ""
+
+#: src/TileChartgui.cpp:46
+msgid "11"
+msgstr ""
+
+#: src/TileChartgui.cpp:46
+msgid "12"
+msgstr ""
+
+#: src/TileChartgui.cpp:46
+msgid "13"
+msgstr ""
+
+#: src/TileChartgui.cpp:46
+msgid "14"
+msgstr ""
+
+#: src/TileChartgui.cpp:46
+msgid "15"
+msgstr ""
+
+#: src/TileChartgui.cpp:46
+msgid "16"
+msgstr ""
+
+#: src/TileChartgui.cpp:46
+msgid "17"
+msgstr ""
+
+#: src/TileChartgui.cpp:46
+msgid "18"
+msgstr ""
+
+#: src/TileChartgui.cpp:46
+msgid "19"
+msgstr ""
+
+#: src/TileChartgui.cpp:46
+msgid "9"
+msgstr ""
+
+#: src/TileChartgui.cpp:46
+msgid "Chart"
+msgstr ""
+
+#: src/TileChartgui.cpp:55
+msgid "Tile count :"
+msgstr ""
+
+#: src/TileChartgui.cpp:80
+msgid "Generate Chart"
+msgstr ""
+
+#: src/TileChartgui.cpp:85
+msgid "Delete Chart"
+msgstr ""
+
+#: src/TileChartgui.cpp:90
+msgid "Cancel"
+msgstr ""
+
+#: src/TileChartgui.cpp:98
+msgid "------"
+msgstr ""
+
+#: src/TileChartgui.cpp:140
+msgid "  Downloadsource (URL) : "
+msgstr ""
+
+#: src/TileChartgui.cpp:144
+msgid "Google Sattalite (khms1)"
+msgstr ""
+
+#: src/TileChartgui.cpp:145
+msgid "Google Sattalite (khms1) v=969"
+msgstr ""
+
+#: src/TileChartgui.cpp:146
+msgid "Google Sattalite (khms2) v=969"
+msgstr ""
+
+#: src/TileChartgui.cpp:147
+msgid "Google Sattalite (khms3) v=969"
+msgstr ""
+
+#: src/TileChartgui.cpp:148
+msgid "OpenStreetmap"
+msgstr ""
+
+#: src/TileChartgui.cpp:149
+msgid "User defined"
+msgstr ""
+
+#: src/TileChartgui.cpp:153
+msgid "https://khms3.google.com/kh/v=[v]?x=[x]&y=[y]&z=[z]"
+msgstr ""
+
+#: src/TileChartgui.cpp:156
+msgid "  example : http(s)://Server.com?[x]?[y]?[z]"
+msgstr ""
+
+#: src/TileChartgui.cpp:165
+msgid "Output Chartdirectory (.kap) :"
+msgstr ""
+
+#: src/TileChartgui.cpp:169 src/TileChartgui.cpp:176
+msgid "Select a folder"
+msgstr ""
+
+#: src/TileChartgui.cpp:172
+msgid "tmp tile dir :"
+msgstr ""
+
+#: src/TileChartgui.cpp:184
+msgid "max tile download "
+msgstr ""
+
+#: src/TileChartgui.cpp:188
+msgid "2000"
+msgstr ""
+
+#: src/TileChartgui.cpp:194
+msgid "Log Tilemerger output to OpenCPN Logfile"
+msgstr ""
+
+#: src/TileChartgui.cpp:197
+msgid "delete tile after download"
+msgstr ""
+
+#: src/TileChartgui.cpp:201
+msgid "Rename Chartfile (.kap) after download"
+msgstr ""
+
+#: src/TileChartgui.cpp:204
+msgid "Show chartselection area"
+msgstr ""
+
+#: src/TileChartgui.cpp:208
+msgid "Show real Tilechartarea"
+msgstr ""
+
+#: src/TileChartgui.cpp:254
+msgid "Enter Chart Filename (without .kap ending)"
+msgstr ""
+
+#: src/TileChartgui_impl.cpp:89
+msgid "Close Window"
+msgstr ""
+
+#: src/TileChartgui_impl.cpp:91
+msgid "Preferences..."
+msgstr ""
+
+#: src/TileChartgui_impl.cpp:114
+msgid "define chart startpoint"
+msgstr ""
