@@ -434,11 +434,8 @@ void TileChart::SetCursorLatLon(double lat, double lon)
     if (!m_pOverlayFactory) return;
     m_pOverlayFactory->MouseLat = (float)lat;
     m_pOverlayFactory->MouseLon = (float)lon;
-    if (MustSaveArea == true)
-    {
+    if (GetArea == true)
         SetTileCount();
-        RequestRefresh(m_parent_window);
-    }
 }
 
 void TileChart::SetTileCount()
@@ -545,13 +542,11 @@ void TileChart::reduceTile()
                 m_pOverlayFactory->StopLon += 0.0002;
         }
     }
-    m_pDialog->m_TileValue->SetLabel(wxString::Format(wxT("%lu"), (long)GetTileCount(m_pOverlayFactory->StartLat, m_pOverlayFactory->StartLon, m_pOverlayFactory->StopLat, m_pOverlayFactory->StopLon, MyZoomLevel)));
-    RequestRefresh(m_parent_window);
 }
 
 bool TileChart::MouseEventHook(wxMouseEvent& event)
 {
-    if (GetArea == false && MustSaveArea == false) return false;
+    if ((GetArea == false && MustSaveArea == false) || DownloadRunning) return false;
     if (event.GetEventType() == wxEVT_LEFT_DOWN) 
     {
         if (m_pOverlayFactory->StartLat == 0)
@@ -564,11 +559,7 @@ bool TileChart::MouseEventHook(wxMouseEvent& event)
         else
         {
             if (m_pOverlayFactory->StopLat != 0) // Dont show reckangel, wenn klick somwhereelse
-            {
-                // MustSaveArea = false;
-                // m_pDialog->m_StatusText->SetLabel(_("---"));
-                return false;
-            }
+                   return false;
             if (m_pOverlayFactory->TempLon == 0)
             {
                 m_pOverlayFactory->StopLat = m_pOverlayFactory->MouseLat;
@@ -858,7 +849,6 @@ bool TileChart::DownloadTile()
             }
             Downloaded++;
             m_pDialog->m_TileValue->SetLabel(wxString::Format(wxT("%lu/%lu"),Downloaded,ToDownload));
-            RequestRefresh(m_parent_window);
             if (DownloadError  || DownloadCanceled) break;
         }
         if (DownloadError || DownloadCanceled) break;

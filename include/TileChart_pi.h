@@ -122,7 +122,6 @@ public:
       bool             ShowChartSelection;
 private:     
 	  
-	  TileChart *plugin;
 	  wxFileConfig      *m_pconfig;
       wxWindow          *m_parent_window;
       bool              LoadConfig(void);
