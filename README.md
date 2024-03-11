@@ -25,4 +25,17 @@ At the moment there can be downloaded "Satallite charts" from google-maps and ch
 In the preferences there is a feature to design a User-URL for all other servers, which use the 
 x,y,z  tile structure in the URL.
 
+Example ...
+
+![1](https://github.com/BerndCirotzki/TileChart_pi/assets/32094108/121e8567-121b-4612-bd7a-fe39ed191846)
+
+
+Select the area ....
+
+![2](https://github.com/BerndCirotzki/TileChart_pi/assets/32094108/01f563b8-d9df-4984-8248-4769b36bac7e)
+
+Generate the chart and ready after ... 40 Seconds ... select the new chart.
+
+![3](https://github.com/BerndCirotzki/TileChart_pi/assets/32094108/8998ddc2-fbd8-42a8-8e18-5c11d9e96038)
+
 
