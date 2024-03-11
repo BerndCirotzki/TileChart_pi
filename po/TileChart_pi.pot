@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TileChart_pi 1.0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-10 11:23+0100\n"
+"POT-Creation-Date: 2024-03-11 08:29+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -281,38 +281,38 @@ msgstr ""
 msgid "2000"
 msgstr ""
 
-#: src/TileChartgui.cpp:194
+#: src/TileChartgui.cpp:202
 msgid "Log Tilemerger output to OpenCPN Logfile"
 msgstr ""
 
-#: src/TileChartgui.cpp:197
+#: src/TileChartgui.cpp:205
 msgid "delete tile after download"
 msgstr ""
 
-#: src/TileChartgui.cpp:201
+#: src/TileChartgui.cpp:209
 msgid "Rename Chartfile (.kap) after download"
 msgstr ""
 
-#: src/TileChartgui.cpp:204
+#: src/TileChartgui.cpp:212
 msgid "Show chartselection area"
 msgstr ""
 
-#: src/TileChartgui.cpp:208
+#: src/TileChartgui.cpp:216
 msgid "Show real Tilechartarea"
 msgstr ""
 
-#: src/TileChartgui.cpp:254
+#: src/TileChartgui.cpp:262
 msgid "Enter Chart Filename (without .kap ending)"
 msgstr ""
 
-#: src/TileChartgui_impl.cpp:89
+#: src/TileChartgui_impl.cpp:90
 msgid "Close Window"
 msgstr ""
 
-#: src/TileChartgui_impl.cpp:91
+#: src/TileChartgui_impl.cpp:92
 msgid "Preferences..."
 msgstr ""
 
-#: src/TileChartgui_impl.cpp:114
+#: src/TileChartgui_impl.cpp:115
 msgid "define chart startpoint"
 msgstr ""
