@@ -34,7 +34,7 @@ Select the area ....
 
 ![2](https://github.com/BerndCirotzki/TileChart_pi/assets/32094108/01f563b8-d9df-4984-8248-4769b36bac7e)
 
-And ready after ... 40 Seconds ...
+Generate the chart and ready after ... 40 Seconds ... select the new chart.
 
 ![3](https://github.com/BerndCirotzki/TileChart_pi/assets/32094108/8998ddc2-fbd8-42a8-8e18-5c11d9e96038)
 
