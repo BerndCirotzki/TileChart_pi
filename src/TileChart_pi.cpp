@@ -149,27 +149,13 @@ int TileChart::Init(void)
       MyZoomLevel = m_pDialog->GetZoomLevel();
       GetArea = false;
       MustSaveArea = false;
-      DownloadRunning = false;
-      // Create the context menu item
-      //contextMenu = new wxMenuItem(NULL, wxID_ANY, wxString(_("Select Tile-Chartarea")),
-      //    wxString(_("Select the Chartarea for tile download"
-      //        "cursor location")),
-      //    wxITEM_NORMAL, NULL);
-      // contextMenuId = AddCanvasContextMenuItem(contextMenu, this);
+      DownloadRunning = false;      
 
       return (WANTS_OVERLAY_CALLBACK | WANTS_OPENGL_OVERLAY_CALLBACK |
               WANTS_ONPAINT_VIEWPORT | WANTS_CURSOR_LATLON |
               WANTS_TOOLBAR_CALLBACK | INSTALLS_TOOLBAR_TOOL | INSTALLS_CONTEXTMENU_ITEMS |
               INSTALLS_PLUGIN_CHART | INSTALLS_PLUGIN_CHART_GL | WANTS_CONFIG |
               WANTS_PREFERENCES | WANTS_MOUSE_EVENTS );
-
-
-    /*  return (WANTS_PREFERENCES |
-		      WANTS_TOOLBAR_CALLBACK |
-              WANTS_MOUSE_EVENTS |
-              INSTALLS_CONTEXTMENU_ITEMS |
-              WANTS_OPENGL_OVERLAY_CALLBACK |
-              );  */
 }
 
 bool TileChart::DeInit(void)
@@ -407,31 +393,10 @@ void TileChart::OnTileChartDialogClose()
     RequestRefresh(m_parent_window); // refresh main window
 }
 
-/*
-void TileChart::OnContextMenuItemCallback(int id)
-{
-    wxString text;
-    
-    if (id == contextMenuId && GetArea == false)
-    {
-        // Draw now the area
-        m_pDialog->m_StatusText->SetLabel(_("Tilechart Start"));
-        GetArea = true;
-        MustSaveArea = true;
-        m_pOverlayFactory->StartLat = 0;
-        m_pOverlayFactory->StopLat = 0;
-        m_pOverlayFactory->TempLon = 0;
-        m_pOverlayFactory->TempLat = 0;
-        m_pDialog->m_TileValue->SetLabel("0");
-        RequestRefresh(m_parent_window);
-    }
-}
-*/
-
 void TileChart::SetCursorLatLon(double lat, double lon)
 {
     // Called each time mouse position changes. We store the latest value
-    if (!m_pOverlayFactory) return;
+    if (!m_pOverlayFactory || !MustSaveArea) return;
     m_pOverlayFactory->MouseLat = (float)lat;
     m_pOverlayFactory->MouseLon = (float)lon;
     if (GetArea == true)
@@ -489,6 +454,7 @@ void TileChart::SetTileCount()
                 TileCount = (long)GetTileCount(m_pOverlayFactory->StartLat, m_pOverlayFactory->StartLon, m_pOverlayFactory->TempLat, m_pOverlayFactory->TempLon, MyZoomLevel);
         }
         m_pDialog->m_TileValue->SetLabel(wxString::Format(wxT("%lu"), TileCount));
+        RequestRefresh(m_parent_window);
     }
 }
 
@@ -507,6 +473,7 @@ void TileChart::reduceTile()
         }        
         if (MaxTile >= (long)GetTileCount(m_pOverlayFactory->StartLat, m_pOverlayFactory->StartLon, m_pOverlayFactory->StopLat, m_pOverlayFactory->StopLon, MyZoomLevel))
         {
+            m_pDialog->m_TileValue->SetLabel(wxString::Format(wxT("%lu"), (long)GetTileCount(m_pOverlayFactory->StartLat, m_pOverlayFactory->StartLon, m_pOverlayFactory->StopLat, m_pOverlayFactory->StopLon, MyZoomLevel)));
             RequestRefresh(m_parent_window);
             return;
         }
@@ -542,6 +509,8 @@ void TileChart::reduceTile()
                 m_pOverlayFactory->StopLon += 0.0002;
         }
     }
+    m_pDialog->m_TileValue->SetLabel(wxString::Format(wxT("%lu"), (long)GetTileCount(m_pOverlayFactory->StartLat, m_pOverlayFactory->StartLon, m_pOverlayFactory->StopLat, m_pOverlayFactory->StopLon, MyZoomLevel)));
+    RequestRefresh(m_parent_window);
 }
 
 bool TileChart::MouseEventHook(wxMouseEvent& event)
