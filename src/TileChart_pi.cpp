@@ -149,8 +149,9 @@ int TileChart::Init(void)
       MyZoomLevel = m_pDialog->GetZoomLevel();
       GetArea = false;
       MustSaveArea = false;
-      DownloadRunning = false;      
-
+      DownloadRunning = false;
+      MoveArea = false;
+      
       return (WANTS_OVERLAY_CALLBACK | WANTS_OPENGL_OVERLAY_CALLBACK |
               WANTS_ONPAINT_VIEWPORT | WANTS_CURSOR_LATLON |
               WANTS_TOOLBAR_CALLBACK | INSTALLS_TOOLBAR_TOOL | INSTALLS_CONTEXTMENU_ITEMS |
@@ -516,6 +517,18 @@ void TileChart::reduceTile()
 bool TileChart::MouseEventHook(wxMouseEvent& event)
 {
     if ((GetArea == false && MustSaveArea == false) || DownloadRunning) return false;
+    if (event.Dragging())
+    {
+        if (event.LeftIsDown() && MoveArea)
+        {
+                m_pOverlayFactory->StartLat = m_pOverlayFactory->MouseLat + LatStartDifftoMouse;
+                m_pOverlayFactory->StopLat = m_pOverlayFactory->MouseLat - LatStopDifftoMouse;
+                m_pOverlayFactory->StartLon = m_pOverlayFactory->MouseLon + LonStartDifftoMouse;
+                m_pOverlayFactory->StopLon = m_pOverlayFactory->MouseLon - LonStopDifftoMouse;
+                event.SetEventType(wxEVT_MOVING); // stop dragging canvas
+        }
+        return false;
+    }
     if (event.GetEventType() == wxEVT_LEFT_DOWN) 
     {
         if (m_pOverlayFactory->StartLat == 0)
@@ -523,12 +536,24 @@ bool TileChart::MouseEventHook(wxMouseEvent& event)
             m_pOverlayFactory->StartLat = m_pOverlayFactory->MouseLat;
             m_pOverlayFactory->StartLon = m_pOverlayFactory->MouseLon;
             m_pDialog->m_StatusText->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHT));
-            m_pDialog->m_StatusText->SetLabel(_("define chartendpoint"));
+            m_pDialog->m_StatusText->SetLabel(_("define chartendpoint"));            
         }
         else
         {
             if (m_pOverlayFactory->StopLat != 0) // Dont show reckangel, wenn klick somwhereelse
-                   return false;
+            {
+                if (MoveArea)
+                {
+                    wxSetCursor(wxCursor(wxCURSOR_ARROW));
+                    MoveArea = false;
+                    return false;  // Error could not be
+                }
+                if(!IsMouseInArea())
+                     return false;
+                MoveArea = true;
+                wxSetCursor(wxCursor(wxCURSOR_HAND));
+                return true;
+            }
             if (m_pOverlayFactory->TempLon == 0)
             {
                 m_pOverlayFactory->StopLat = m_pOverlayFactory->MouseLat;
@@ -541,13 +566,54 @@ bool TileChart::MouseEventHook(wxMouseEvent& event)
             }
             m_pDialog->m_StatusText->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHT));
             m_pDialog->m_StatusText->SetLabel(_("chart area is defined"));
+            wxSetCursor(wxCursor(wxCURSOR_ARROW));
             m_pDialog->m_generateChart->Enable(true);
             RequestRefresh(m_parent_window);
             GetArea = false;
         }
         return true;
     }
+    if (event.GetEventType() == wxEVT_LEFT_UP)
+    {
+        wxSetCursor(wxCursor(wxCURSOR_ARROW));
+        MoveArea = false;
+        return false;
+    }          
     return false;
+}
+
+bool TileChart::IsMouseInArea()
+{
+    if (m_pOverlayFactory->StartLat < m_pOverlayFactory->StopLat)
+    {
+        if (m_pOverlayFactory->MouseLat < m_pOverlayFactory->StartLat ||
+            m_pOverlayFactory->MouseLat > m_pOverlayFactory->StopLat)
+            return false;
+    }
+    else
+    {
+        if (m_pOverlayFactory->MouseLat > m_pOverlayFactory->StartLat ||
+            m_pOverlayFactory->MouseLat < m_pOverlayFactory->StopLat)
+            return false;
+    }
+    if (m_pOverlayFactory->StartLon < m_pOverlayFactory->StopLon)
+    {
+        if (m_pOverlayFactory->MouseLon < m_pOverlayFactory->StartLon ||
+            m_pOverlayFactory->MouseLon > m_pOverlayFactory->StopLon)
+            return false;
+    }
+    else
+    {
+        if (m_pOverlayFactory->MouseLon > m_pOverlayFactory->StartLon ||
+            m_pOverlayFactory->MouseLon < m_pOverlayFactory->StopLon)
+            return false;
+    }
+    LatStartDifftoMouse = m_pOverlayFactory->StartLat - m_pOverlayFactory->MouseLat;
+    LonStartDifftoMouse = m_pOverlayFactory->StartLon - m_pOverlayFactory->MouseLon;
+
+    LatStopDifftoMouse = m_pOverlayFactory->MouseLat - m_pOverlayFactory->StopLat;
+    LonStopDifftoMouse = m_pOverlayFactory->MouseLon - m_pOverlayFactory->StopLon;
+    return true;
 }
 
 void TileChart::SetViewPort(PlugIn_ViewPort* vp)

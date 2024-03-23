@@ -157,6 +157,11 @@ private:
       bool              DrawRealTile;      
       bool              DownloadCanceled;
       bool              DownloadRunning;
+      bool              MoveArea;
+      double            LatStartDifftoMouse;
+      double            LonStartDifftoMouse;
+      double            LatStopDifftoMouse;
+      double            LonStopDifftoMouse;
       void              SetViewPort(PlugIn_ViewPort* vp);
       bool              RenameKapChartFile(wxString& KapFile);
       bool              StartDownLoadFile(int Xtile, int Ytile);
@@ -166,6 +171,7 @@ private:
       bool              DeleteTileFiles();
       bool              GenerateKapFile();
       void              MakeTilePosition();
+      bool              IsMouseInArea();
       wxString          MyInstallPath;
       // Events
       void OnDlEvent(OCPN_downloadEvent& ev);
