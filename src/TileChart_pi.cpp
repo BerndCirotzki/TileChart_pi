@@ -525,6 +525,7 @@ bool TileChart::MouseEventHook(wxMouseEvent& event)
                 m_pOverlayFactory->StopLat = m_pOverlayFactory->MouseLat - LatStopDifftoMouse;
                 m_pOverlayFactory->StartLon = m_pOverlayFactory->MouseLon + LonStartDifftoMouse;
                 m_pOverlayFactory->StopLon = m_pOverlayFactory->MouseLon - LonStopDifftoMouse;
+                RequestRefresh(m_parent_window);
                 event.SetEventType(wxEVT_MOVING); // stop dragging canvas
         }
         return false;
