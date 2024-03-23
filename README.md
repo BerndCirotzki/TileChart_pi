@@ -11,6 +11,9 @@ and these programs are not available as a "libray"  for example in the "opencpn_
 
 There is a Installer that can be used to install without compile for OpenCPN 5.8.4
 TileChart_pi-1.0.0.0-Windows_Installer_OpenCPN_8.6.4.exe
+to "c:\users\[Username]\Appdata\local\opencpn"
+
+or import the tarball TileChart_pi-1.0.0.0-msvc-x86_64-10.0.19045-MSVC.tar.gz in OpenCPN.
 
 How it works
 ------------
