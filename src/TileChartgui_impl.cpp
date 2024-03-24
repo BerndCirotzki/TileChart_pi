@@ -126,6 +126,8 @@ void Dlg::OnClickStartButton(wxCommandEvent& event)
     m_cancel->Enable(true);
     m_deletegenerated->Enable(false);
     m_generateChart->Enable(false);
+    plugin->CurrentCursor = plugin->MyCursorCross;
+    SetCursor_PlugIn(plugin->CurrentCursor);
 }
 
 void Dlg::OnChooseZoomLevel(wxCommandEvent& event)

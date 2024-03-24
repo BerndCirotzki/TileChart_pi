@@ -126,7 +126,6 @@ int TileChart::Init(void)
 	  //    And load the configuration items
       LoadConfig();	  
 	  //    This PlugIn needs a toolbar icon, so request its insertion
-	  if(m_bTileCharthowIcon)
 		m_leftclick_tool_id  = InsertPlugInTool(_T(""), _img_TileChart, _img_TileChart, wxITEM_CHECK,
             _("TileChart"), _T(""), NULL,
              CALCULATOR_TOOL_POSITION, 0, this);
@@ -151,7 +150,10 @@ int TileChart::Init(void)
       MustSaveArea = false;
       DownloadRunning = false;
       MoveArea = false;
-      
+      MyCursorCross = new wxCursor(wxCURSOR_CROSS);
+      MyCursorHand = new wxCursor(wxCURSOR_HAND);
+      CurrentCursor = NULL;      
+
       return (WANTS_OVERLAY_CALLBACK | WANTS_OPENGL_OVERLAY_CALLBACK |
               WANTS_ONPAINT_VIEWPORT | WANTS_CURSOR_LATLON |
               WANTS_TOOLBAR_CALLBACK | INSTALLS_TOOLBAR_TOOL | INSTALLS_CONTEXTMENU_ITEMS |
@@ -176,9 +178,10 @@ bool TileChart::DeInit(void)
             m_pDialog = NULL;
 			SetToolbarItemState( m_leftclick_tool_id, m_bShowTileChart );
       }      
-	  
+      delete MyCursorCross;
+      delete MyCursorHand;
     SaveConfig();
-    RequestRefresh(m_parent_window); // refresh mainn window 
+    RequestRefresh(m_parent_window); // refresh main window 
     return true;
 }
 
@@ -517,6 +520,7 @@ void TileChart::reduceTile()
 bool TileChart::MouseEventHook(wxMouseEvent& event)
 {
     if ((GetArea == false && MustSaveArea == false) || DownloadRunning) return false;
+    SetMUICursor_PlugIn(CurrentCursor, GetCanvasIndexUnderMouse());
     if (event.Dragging())
     {
         if (event.LeftIsDown() && MoveArea)
@@ -545,14 +549,16 @@ bool TileChart::MouseEventHook(wxMouseEvent& event)
             {
                 if (MoveArea)
                 {
-                    wxSetCursor(wxCursor(wxCURSOR_ARROW));
+                    CurrentCursor = NULL;
+                    SetCursor_PlugIn(CurrentCursor);
                     MoveArea = false;
                     return false;  // Error could not be
                 }
                 if(!IsMouseInArea())
                      return false;
                 MoveArea = true;
-                wxSetCursor(wxCursor(wxCURSOR_HAND));
+                CurrentCursor = MyCursorHand;
+                SetCursor_PlugIn(CurrentCursor);
                 return true;
             }
             if (m_pOverlayFactory->TempLon == 0)
@@ -567,7 +573,8 @@ bool TileChart::MouseEventHook(wxMouseEvent& event)
             }
             m_pDialog->m_StatusText->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHT));
             m_pDialog->m_StatusText->SetLabel(_("chart area is defined"));
-            wxSetCursor(wxCursor(wxCURSOR_ARROW));
+            CurrentCursor = NULL;
+            SetCursor_PlugIn(CurrentCursor);
             m_pDialog->m_generateChart->Enable(true);
             RequestRefresh(m_parent_window);
             GetArea = false;
@@ -576,8 +583,13 @@ bool TileChart::MouseEventHook(wxMouseEvent& event)
     }
     if (event.GetEventType() == wxEVT_LEFT_UP)
     {
-        wxSetCursor(wxCursor(wxCURSOR_ARROW));
-        MoveArea = false;
+        if (m_pOverlayFactory->StopLat != 0)
+        {
+            CurrentCursor = NULL;
+            SetCursor_PlugIn(CurrentCursor);
+            MoveArea = false;
+            return true;
+        }
         return false;
     }          
     return false;

@@ -114,12 +114,14 @@ public:
       PlugIn_ViewPort   *m_vp;
       // Dialog Style
       int              m_route_dialog_x, m_route_dialog_y;
-      bool             m_bTileCharthowIcon;
       bool             GetArea;
       bool             MustSaveArea;
       int              MyZoomLevel;
       int              DownloadURL;
       bool             ShowChartSelection;
+      wxCursor         *MyCursorCross;
+      wxCursor         *MyCursorHand;
+      wxCursor         *CurrentCursor;
 private:     
 	  
 	  wxFileConfig      *m_pconfig;
