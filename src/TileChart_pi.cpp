@@ -283,7 +283,7 @@ bool TileChart::LoadConfig(void)
             m_route_dialog_y =  pConf->Read ( _T ( "DialogPosY" ), 20L );            
             pConf->Read(_T("TileDirectory"), &TileDirectory,_T("c:\\tmp"));
             pConf->Read(_T("KapDirectory"), &KapDirectory, _T("c:\\tmp"));
-            pConf->Read(_T("UserURL"), &UserURL, _T("https://khms3.google.com/kh/v=969?x=[x]&y=[y]&z=[z]"));
+            pConf->Read(_T("UserURL"), &UserURL, _T("https://khms3.google.com/kh/v=1001?x=[x]&y=[y]&z=[z]"));
             pConf->Read(_T("DownloadURL"), &DownloadURL, 0);
             LogTile = (bool)pConf->Read(_T("LogTilemerger"), LogTile);
             DeleteTile = (bool)pConf->Read(_T("DeleteTile"), DeleteTile);
@@ -838,7 +838,7 @@ wxString TileChart::OnPrepareOpenStreetmap(long x, long y, long z)
 
 wxString TileChart::OnPrepareGoogle(long v, long x, long y, long z, wxString Server)
 {
-    // Form Google Server :  https://khms3.google.com/kh/v=969?x=2162&y=1321&z=12
+    // Form Google Server :  https://khms3.google.com/kh/v=1001?x=2162&y=1321&z=12
 
     wxString VF = Server + _T("google.com/kh/");
     wxString m_v = wxString::Format(_T("v=%i?"), (int)v);
@@ -967,7 +967,7 @@ bool TileChart::StartDownLoadFile(int Xtile, int Ytile)
     if (m_download_activ) return false;  // No free slot
     //m_pDialog->m_ErrorText->SetLabel(wxString::Format(_T("I:%i  "), i));
     // Make URL
-    wxString urlString = OnPrepare(969, Xtile, Ytile, MyZoomLevel);
+    wxString urlString = OnPrepare(1001, Xtile, Ytile, MyZoomLevel);
     if (urlString == wxEmptyString)
         return false;
     // Make DestFile+path

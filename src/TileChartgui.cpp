@@ -142,9 +142,9 @@ m_Parameterdialog::m_Parameterdialog( wxWindow* parent, wxWindowID id, const wxS
 	bSizer1->Add( m_staticText9, 0, wxALL, 2 );
 
 	m_DownloadURL = new wxComboBox( this, wxID_ANY, _("Google Sattalite (khms1)"), wxDefaultPosition, wxDefaultSize, 0, NULL, wxCB_READONLY );
-	m_DownloadURL->Append( _("Google Sattalite (khms1) v=969") );
-	m_DownloadURL->Append( _("Google Sattalite (khms2) v=969") );
-	m_DownloadURL->Append( _("Google Sattalite (khms3) v=969") );
+	m_DownloadURL->Append( _("Google Sattalite (khms1) v=1001") );
+	m_DownloadURL->Append( _("Google Sattalite (khms2) v=1001") );
+	m_DownloadURL->Append( _("Google Sattalite (khms3) v=1001") );
 	m_DownloadURL->Append( _("OpenStreetmap") );
 	m_DownloadURL->Append( _("User defined") );
 	m_DownloadURL->SetSelection( 0 );
