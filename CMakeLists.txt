@@ -54,10 +54,10 @@ set(PACKAGE "TileChart_pi")
 set(SHORT_DESCRIPTION "Make kap charts from tile (Google Sat, ...)")
 set(LONG_DESCRIPTION "Make kap charts from tile png by selecting the area on the OpenCPN canvas. Use Google-Satallite, OpenStreetview ... or self defined http(s) link. (Internet connection is required)")
 set(VERSION_MAJOR "1")
-set(VERSION_MINOR "0")
+set(VERSION_MINOR "1")
 set(VERSION_PATCH "0")
 set(VERSION_TWEAK "0")
-set(VERSION_DATE  "08/03/2024")#DD/MM/YYYY format
+set(VERSION_DATE  "25/10/2025")#DD/MM/YYYY format
 set(OCPN_MIN_VERSION "ov58")
 
 set(OCPN_API_VERSION_MAJOR "1")

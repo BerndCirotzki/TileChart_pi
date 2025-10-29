@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version 4.0.0-0-g0efcecf)
+// C++ code generated with wxFormBuilder (version 4.2.1-0-g80c4cb6)
 // http://www.wxformbuilder.org/
 //
 // PLEASE DO *NOT* EDIT THIS FILE!
@@ -141,19 +141,42 @@ m_Parameterdialog::m_Parameterdialog( wxWindow* parent, wxWindowID id, const wxS
 	m_staticText9->Wrap( -1 );
 	bSizer1->Add( m_staticText9, 0, wxALL, 2 );
 
-	m_DownloadURL = new wxComboBox( this, wxID_ANY, _("Google Sattalite (khms1)"), wxDefaultPosition, wxDefaultSize, 0, NULL, wxCB_READONLY );
-	m_DownloadURL->Append( _("Google Sattalite (khms1) v=1001") );
-	m_DownloadURL->Append( _("Google Sattalite (khms2) v=1001") );
-	m_DownloadURL->Append( _("Google Sattalite (khms3) v=1001") );
+	wxFlexGridSizer* fgSizer5;
+	fgSizer5 = new wxFlexGridSizer( 0, 3, 0, 0 );
+	fgSizer5->SetFlexibleDirection( wxBOTH );
+	fgSizer5->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
+
+	m_DownloadURL = new wxComboBox( this, wxID_ANY, _("Google Sattalite (khms1)"), wxDefaultPosition, wxSize( 210,-1 ), 0, NULL, wxCB_READONLY );
+	m_DownloadURL->Append( _("Google Sattalite (khms1)") );
+	m_DownloadURL->Append( _("Google Sattalite (khms2)") );
+	m_DownloadURL->Append( _("Google Sattalite (khms3)") );
 	m_DownloadURL->Append( _("OpenStreetmap") );
 	m_DownloadURL->Append( _("User defined") );
 	m_DownloadURL->SetSelection( 0 );
-	bSizer1->Add( m_DownloadURL, 0, wxALL|wxEXPAND, 2 );
+	fgSizer5->Add( m_DownloadURL, 0, wxALIGN_CENTER_VERTICAL|wxALL|wxEXPAND, 2 );
+
+	m_staticText13 = new wxStaticText( this, wxID_ANY, _("    Google V value :"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText13->Wrap( -1 );
+	fgSizer5->Add( m_staticText13, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+
+	m_Google_V = new wxTextCtrl( this, wxID_ANY, _("1001"), wxDefaultPosition, wxSize( 40,-1 ), wxTE_CENTER );
+	#ifdef __WXGTK__
+	if ( !m_Google_V->HasFlag( wxTE_MULTILINE ) )
+	{
+	m_Google_V->SetMaxLength( 5 );
+	}
+	#else
+	m_Google_V->SetMaxLength( 5 );
+	#endif
+	fgSizer5->Add( m_Google_V, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxBOTTOM|wxRIGHT, 5 );
+
+
+	bSizer1->Add( fgSizer5, 1, wxEXPAND|wxRIGHT|wxLEFT, 5 );
 
 	m_UserURL = new wxTextCtrl( this, wxID_ANY, _("https://khms3.google.com/kh/v=[v]?x=[x]&y=[y]&z=[z]"), wxDefaultPosition, wxDefaultSize, 0 );
 	bSizer1->Add( m_UserURL, 0, wxALL|wxEXPAND, 5 );
 
-	m_staticText10 = new wxStaticText( this, wxID_ANY, _("  example : http(s)://Server.com?[x]?[y]?[z]"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText10 = new wxStaticText( this, wxID_ANY, _("  example : http(s)://Server.com/x=[x]y=[y]z=[z]"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText10->Wrap( -1 );
 	m_staticText10->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_HIGHLIGHT ) );
 

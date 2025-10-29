@@ -118,6 +118,7 @@ public:
       bool             MustSaveArea;
       int              MyZoomLevel;
       int              DownloadURL;
+      int              vGoogle;
       bool             ShowChartSelection;
       wxCursor         *MyCursorCross;
       wxCursor         *MyCursorHand;

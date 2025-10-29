@@ -40,6 +40,10 @@ ParameterDialog::ParameterDialog(TileChart* p, wxWindow* parent, wxWindowID id, 
 
 void ParameterDialog::OnChooseSource(wxCommandEvent& event)
 {
+    if (m_DownloadURL->GetSelection() > 2) // Not Google
+        m_Google_V->Enable(false);
+    else
+        m_Google_V->Enable(true);
     if (m_DownloadURL->GetSelection() == 4)
         m_UserURL->Enable(true);
     else

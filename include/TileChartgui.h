@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version 4.0.0-0-g0efcecf)
+// C++ code generated with wxFormBuilder (version 4.2.1-0-g80c4cb6)
 // http://www.wxformbuilder.org/
 //
 // PLEASE DO *NOT* EDIT THIS FILE!
@@ -30,7 +30,6 @@
 #include <wx/checkbox.h>
 
 ///////////////////////////////////////////////////////////////////////////
-
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class m_dialog
@@ -77,6 +76,7 @@ class m_Parameterdialog : public wxDialog
 
 	protected:
 		wxStaticText* m_staticText9;
+		wxStaticText* m_staticText13;
 		wxStaticText* m_staticText10;
 		wxStaticLine* m_staticline2;
 		wxStaticText* m_staticText1;
@@ -96,6 +96,7 @@ class m_Parameterdialog : public wxDialog
 
 	public:
 		wxComboBox* m_DownloadURL;
+		wxTextCtrl* m_Google_V;
 		wxTextCtrl* m_UserURL;
 		wxDirPickerCtrl* m_chartdirectory;
 		wxDirPickerCtrl* m_tiledirectory;

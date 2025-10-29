@@ -291,6 +291,7 @@ bool TileChart::LoadConfig(void)
             pConf->Read(_T("RenmameChartFile"), &RenmameChartFile, 0);
             pConf->Read(_T("DrawRealTile"), &DrawRealTile, 1);
             pConf->Read(_T("ShowChartSelection"), &ShowChartSelection, 1);
+            pConf->Read(_T("vGoogle"), &vGoogle, 1001);
             ParameterDialog* dialog = new ParameterDialog(this, m_parent_window, wxID_ANY, _("TileChart"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE);
             ServerName = dialog->m_DownloadURL->GetString(DownloadURL);
             delete dialog;
@@ -320,6 +321,7 @@ bool TileChart::SaveConfig(void)
             pConf->Write(_T("RenmameChartFile"), RenmameChartFile);
             pConf->Write(_T("DrawRealTile"), DrawRealTile);
             pConf->Write(_T("ShowChartSelection"), ShowChartSelection);
+            pConf->Write(_T("vGoogle"), vGoogle);
             return true;
       }
       else
@@ -350,11 +352,16 @@ void TileChart::ShowPreferencesDialog(wxWindow* parent)
         dialog->m_UserURL->Enable(true);
     else
         dialog->m_UserURL->Enable(false);
+    if (DownloadURL > 2) // Not Google
+        dialog->m_Google_V->Enable(false);
+    else
+        dialog->m_Google_V->Enable(true);
     dialog->m_deleteTile->SetValue(DeleteTile);
     dialog->m_RenameChartfile->SetValue(RenmameChartFile);
     dialog->m_DrawRealTile->SetValue(DrawRealTile);
     dialog->m_ShowChartSelection->SetValue(ShowChartSelection);
     dialog->m_MaxTile->SetValue(wxString::Format(wxT("%lu"), MaxTile));
+    dialog->m_Google_V->SetValue(wxString::Format(wxT("%lu"), vGoogle));
 	if (dialog->ShowModal() == wxID_OK)
 	{        
 		if (NULL != m_pDialog)
@@ -383,6 +390,7 @@ void TileChart::ShowPreferencesDialog(wxWindow* parent)
             RenmameChartFile = dialog->m_RenameChartfile->GetValue();
             DrawRealTile = dialog->m_DrawRealTile->GetValue();
             ShowChartSelection = dialog->m_ShowChartSelection->GetValue();
+            vGoogle = atol(dialog->m_Google_V->GetValue());
 		}
 		SaveConfig();
 	}
@@ -967,7 +975,7 @@ bool TileChart::StartDownLoadFile(int Xtile, int Ytile)
     if (m_download_activ) return false;  // No free slot
     //m_pDialog->m_ErrorText->SetLabel(wxString::Format(_T("I:%i  "), i));
     // Make URL
-    wxString urlString = OnPrepare(1001, Xtile, Ytile, MyZoomLevel);
+    wxString urlString = OnPrepare(vGoogle, Xtile, Ytile, MyZoomLevel);
     if (urlString == wxEmptyString)
         return false;
     // Make DestFile+path
@@ -1104,9 +1112,22 @@ bool TileChart::GenerateKapFile()
         {
             while (!RenameKapChartFile(KapFile)) {}
         }
-        AddChartToDBInPlace((KapDirectory + KapFile), true);
-        m_pDialog->m_deletegenerated->Enable(true);
-        return true;
+        if (AddChartToDBInPlace((KapDirectory + KapFile), true))
+        {
+            m_pDialog->m_deletegenerated->Enable(true);
+            GetArea = false;
+            MustSaveArea = false;
+            m_pDialog->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHT));            
+            RefreshOpenCPNCanvas();
+            return true;
+        }
+        else
+        {
+            m_pDialog->m_deletegenerated->Enable(false);
+            m_pDialog->m_StatusText->SetForegroundColour(wxColour(255, 0, 0)); // Red
+            m_pDialog->m_StatusText->SetLabel(_("Error creating Kap File"));
+            return false;
+        }
     }
     else
     {
@@ -1142,11 +1163,23 @@ bool TileChart::AnalyseKapOutput(wxArrayString Output, wxArrayString Error)
 
 void TileChart::DeleteChart()
 {
-    RemoveChartFromDBInPlace(KapDirectory + KapFile);
-    wxRemoveFile(KapDirectory + KapFile);
-    m_pDialog->m_StatusText->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHT));
-    m_pDialog->m_StatusText->SetLabel(_("Kap File deleted"));
-    m_pDialog->m_deletegenerated->Enable(false);
+    if (RemoveChartFromDBInPlace(KapDirectory + KapFile))  // Code error in Opencpn .... always return false
+    {
+        wxRemoveFile(KapDirectory + KapFile);
+        m_pDialog->m_StatusText->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHT));
+        m_pDialog->m_StatusText->SetLabel(_("Kap File deleted"));
+        m_pDialog->m_deletegenerated->Enable(false);
+    }
+    else
+    {
+        wxRemoveFile(KapDirectory + KapFile);
+        m_pDialog->m_StatusText->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHT));
+        m_pDialog->m_StatusText->SetLabel(_("Kap File deleted"));
+        m_pDialog->m_deletegenerated->Enable(false);
+        // This when OpenCPN code is corrected
+        //m_pDialog->m_StatusText->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHT));
+        //m_pDialog->m_StatusText->SetLabel(_("could not delete Kap file"));
+    }
 }
 
 bool TileChart::RenameKapChartFile(wxString &KapFile)
