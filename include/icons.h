@@ -7,9 +7,18 @@
 #   include <wx/wx.h>
 #endif
 
+#include <wx/filename.h>
+#include <wx/mstream.h>
+
 extern void initialize_images(void);
 
 extern wxBitmap *_img_TileChart;
 extern wxBitmap* _img_TileChart_pi;
+
+#ifdef PLUGIN_USE_SVG
+extern wxString _svg_TileChart;
+extern wxString _svg_TileChart_rollover;
+extern wxString _svg_TileChart_toggled;
+#endif
 
 #endif /* ICONS_H */

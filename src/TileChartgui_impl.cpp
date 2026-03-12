@@ -183,10 +183,10 @@ int Dlg::GetZoomLevel()
 }
 
 
-int Dlg::GetZoom(double myChartScale)
+int Dlg::GetZoom(double ChartScale)
 {
     // If myChartScale is not exactly as shown in OpenCPN get the best scale to use.
-
+    double myChartScale = ChartScale;
     if (myChartScale < 1200)
     {
         myChartScale = 800;

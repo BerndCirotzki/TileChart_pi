@@ -95,6 +95,28 @@ TileChart::TileChart(void *ppimgr) :opencpn_plugin_116(ppimgr)
       m_download_handle = 0;
       m_download_activ = false;
       ServerName = _T("---");
+#ifdef PLUGIN_USE_SVG
+      wxFileName fn;
+      auto path = GetPluginDataDir("TileChart_pi");
+      fn.SetPath(path);
+      fn.AppendDir("data");
+      fn.SetFullName("TileChart_panel.png");
+
+      path = fn.GetFullPath();
+
+      wxInitAllImageHandlers();
+
+      wxLogDebug(wxString("Using icon path: ") + path);
+      if (!wxImage::CanRead(path)) {
+          wxLogDebug("Initiating image handlers.");
+          wxInitAllImageHandlers();
+      }
+      wxImage panelIcon(path);
+      if (panelIcon.IsOk())
+          _img_TileChart_pi = new wxBitmap(panelIcon);
+      else
+          wxLogWarning("TileChart Panel icon has NOT been loaded");
+#endif
 	  wxLogMessage("    Creating TileChart Plugin");
 }
 
@@ -126,9 +148,18 @@ int TileChart::Init(void)
 	  //    And load the configuration items
       LoadConfig();	  
 	  //    This PlugIn needs a toolbar icon, so request its insertion
+#ifndef PLUGIN_USE_SVG
 		m_leftclick_tool_id  = InsertPlugInTool(_T(""), _img_TileChart, _img_TileChart, wxITEM_CHECK,
             _("TileChart"), _T(""), NULL,
              CALCULATOR_TOOL_POSITION, 0, this);
+#else
+// Scaleable Vector Graphics (SVG) icons are stored in the following
+// path.
+        {
+            m_leftclick_tool_id = InsertPlugInToolSVG("TileChart", _svg_TileChart, _svg_TileChart_rollover, _svg_TileChart_toggled,
+                wxITEM_CHECK, _("TileChart"), wxEmptyString, NULL, CALCULATOR_TOOL_POSITION, 0, this);
+        }
+#endif
 
       m_pDialog = NULL;
 	  m_pDialog = new Dlg(m_parent_window, wxDEFAULT_DIALOG_STYLE);
@@ -143,6 +174,7 @@ int TileChart::Init(void)
 	  {
 		  m_pDialog->Hide();		  
 	  }
+      SetToolbarItemState(m_leftclick_tool_id, m_bShowTileChart);
       m_pDialog->m_ServerName->SetLabel(ServerName);
       m_vp = NULL;
       MyZoomLevel = m_pDialog->GetZoomLevel();
@@ -412,7 +444,10 @@ void TileChart::SetCursorLatLon(double lat, double lon)
     m_pOverlayFactory->MouseLat = (float)lat;
     m_pOverlayFactory->MouseLon = (float)lon;
     if (GetArea == true)
+    {
         SetTileCount();
+        reduceTile();
+    }
 }
 
 void TileChart::SetTileCount()
@@ -646,7 +681,18 @@ void TileChart::SetViewPort(PlugIn_ViewPort* vp)
 
 bool TileChart::RenderOverlay(wxDC& dc, PlugIn_ViewPort* vp)
 {
-    SetViewPort(vp);
+    return false;    
+}
+
+bool TileChart::RenderGLOverlay(wxGLContext* pcontext, PlugIn_ViewPort* vp)
+{
+    return false;    
+}
+
+bool TileChart::RenderOverlayMultiCanvas(wxDC& dc, PlugIn_ViewPort* vp, int canvasIndex)
+{
+    if (GetCanvasByIndex(canvasIndex) == GetCanvasUnderMouse())
+       SetViewPort(vp);
     if (!m_pDialog || !m_pDialog->IsShown() || !m_pOverlayFactory || !MustSaveArea) return false;
     MakeTilePosition();
     m_pOverlayFactory->RenderOverlay(dc, vp);
@@ -654,15 +700,17 @@ bool TileChart::RenderOverlay(wxDC& dc, PlugIn_ViewPort* vp)
     return true;
 }
 
-bool TileChart::RenderGLOverlay(wxGLContext* pcontext, PlugIn_ViewPort* vp)
+bool TileChart::RenderGLOverlayMultiCanvas(wxGLContext* pcontext, PlugIn_ViewPort* vp, int canvasIndex)
 {
-    SetViewPort(vp);
+    if (GetCanvasByIndex(canvasIndex) == GetCanvasUnderMouse())
+       SetViewPort(vp);
     if (!m_pDialog || !m_pDialog->IsShown() || !m_pOverlayFactory || !MustSaveArea) return false;
     MakeTilePosition();
     m_pOverlayFactory->RenderGLOverlay(pcontext, vp);
 
     return true;
 }
+
 
 Tile TileChart::GetTilefromPosition(double Lat, double Lon, long ZoomLevel)
 {

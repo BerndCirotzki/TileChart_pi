@@ -84,6 +84,8 @@ public:
       void OnToolbarToolCallback(int id);
       bool RenderOverlay(wxDC& dc, PlugIn_ViewPort* vp);
       bool RenderGLOverlay(wxGLContext* pcontext, PlugIn_ViewPort* vp);
+      bool RenderOverlayMultiCanvas(wxDC& dc, PlugIn_ViewPort* vp, int canvasIndex);
+      bool RenderGLOverlayMultiCanvas(wxGLContext* pcontext, PlugIn_ViewPort* vp, int canvasIndex);
       Tile GetTilefromPosition(double Lat, double Lon, long ZoomLevel);
       long GetTileCount(double Lat1, double Lon1, double Lat2, double Lon2, long ZoomLevel);
       void GenerateCharts();

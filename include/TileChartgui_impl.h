@@ -63,7 +63,7 @@ public:
         void OnClickCancel(wxCommandEvent& event);
         void OnDeleteChart(wxCommandEvent& event);
         int GetZoomLevel();
-        int  GetZoom(double myChartScale);
+        int  GetZoom(double ChartScale);
         void OnContextMenu(wxContextMenuEvent& evt);
         void OnContextMenuSelect(wxCommandEvent& evt);
 private:
